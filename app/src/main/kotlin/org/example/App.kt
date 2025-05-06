@@ -12,8 +12,11 @@ fun main() {
 }
 
 fun calculadora (a: Int, b: Int, c: Int){
+    println("Tabla de valores:")
+    println("X, Resultado de la función")
     for (x in -5..5) {
         var resultado=a*x*x+b*x+c
-        println("Para X = ${x}, el resultado de la función cuadrática es ${resultado}")
+        val valores = arrayListOf(x, resultado)
+        println(valores)
     }
 }
