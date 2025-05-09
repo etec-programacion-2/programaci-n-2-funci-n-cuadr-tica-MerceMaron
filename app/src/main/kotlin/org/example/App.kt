@@ -1,6 +1,8 @@
 package org.example
+import java.math.BigDecimal 
+import java.math.RoundingMode
 
-fun main() {
+fun main() { 
     val a=6
     val b=12
     val c=3
@@ -33,10 +35,10 @@ fun discriminante (a: Int, b:Int, c:Int){
     } else if (resDiscriminante > 0){
         val raízUno: Double= (-b+ Math.sqrt(b1*b1-4*a1*c1))/2*a1
         val raízDos: Double= (-b- Math.sqrt(b1*b1-4*a1*c1))/2*a1
-        println("La función tiene dos raíces: ${raízUno}, ${raízDos}")
+        val raízDecimal1= BigDecimal(raízUno.toString()).setScale(2, RoundingMode.HALF_UP)
+        val raízDecimal2= BigDecimal(raízDos.toString()).setScale(2, RoundingMode.HALF_UP)
+        println("La función tiene dos raíces: ${raízDecimal1}, ${raízDecimal2}")
     } else {
         println("La función no tiene raíces reales")
     }
 }
-//FALTA REDONDEAR A 2 DECIMALES Y MEJORAR Y PULIR
-
